@@ -1,11 +1,11 @@
 'use strict';
 
-import StartDirective from './directives/application.es6';
+import ApplicationDirective from './directives/application.es6';
 
 let moduleName = 'Application';
 let moduleDependencies = [];
 
 angular.module(moduleName, moduleDependencies)
-    .directive('application', StartDirective);
+    .directive('application', ApplicationDirective);
 
 export default moduleName;

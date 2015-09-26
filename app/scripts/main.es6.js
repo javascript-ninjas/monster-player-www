@@ -5,6 +5,9 @@ require('../vendor/angular/angular');
 // Global jQuery
 window.jQuery = window.$ = require('../vendor/jquery/jquery.min');
 
+// Styles
+require('../styles/main.scss');
+
 $(function () {
     // AngularJS
     let appModule = require('./modules.es6');

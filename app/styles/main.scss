@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.master-wrapper {
+    width: 100%;
+    margin: 5px 0 auto;
+    background-color: #292727;
+}
+
+.top-wrapper {
+    height: 50px;
+}
+
+.center-wrapper {
+    min-height: 500px;
+
+    .columns-container {
+        width: 1800px;
+        margin: 0 auto;
+    }
+
+    .column {
+        width: 590px;
+        min-height: 400px;
+        float: left;
+        height: inherit;
+        margin: 5px;
+        background-color: #2F2F2F;
+
+    }
+
+    .search-wrapper {}
+
+    .player-wrapper {}
+
+    .chat-wrapper {}
+}
+
+.bottom-wrapper {
+    height: 100px;
+}
+
+.clear {
+    clear: both;
+}

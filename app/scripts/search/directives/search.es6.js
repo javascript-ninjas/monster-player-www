@@ -1,4 +1,4 @@
-import template from '../templates/application.html';
+import template from '../templates/search.html';
 
 class Controller {
     /*ngInject*/
@@ -10,11 +10,11 @@ class Controller {
 
     setupScope() {
         let $scope = this.$scope;
-        $scope.test = 'Oj i tutaj będzie ogień ... ]:->';
+        $scope.searchTitle = 'search directive';
     }
 }
 
-let startDirective = /*@ngInject*/ () => {
+let searchDirective = /*@ngInject*/ () => {
     return {
         template: template,
         restrict: 'E',
@@ -25,4 +25,4 @@ let startDirective = /*@ngInject*/ () => {
     };
 };
 
-export default startDirective;
+export default searchDirective;
