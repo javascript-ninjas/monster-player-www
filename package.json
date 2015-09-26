@@ -1,0 +1,17 @@
+{
+  "name": "monster-player-server",
+  "author": "grime85",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javascript-ninjas/monster-player-www.git"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "ng-annotate-webpack-plugin": "0.1.2",
+    "webpack": "^1.12.2"
+  }
+}
