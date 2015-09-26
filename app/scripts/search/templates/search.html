@@ -1,3 +1,22 @@
 <div>
     {{ searchTitle }}
+    <form novalidate>
+        <input type="text" autocomplete="off" ng-model="query"></form>
+        <button type="button" ng-click="loadMusicResults()">Szukaj</button>
+    </form>
+
+    <div class="results" ng-show="isResultAvailable">
+        <ul class="searchResults">
+            <li ng-repeat="song in songs" ng-click="sendToPlayer(song)">
+
+                <!-- obrazek -->
+                <img ng-src="{{ song.thumb }}" alt="thumb"/>
+
+                <!-- title -->
+                <span>{{song.title}}</span>
+
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
 </div>
