@@ -56,9 +56,7 @@ class Controller {
     }
 
     sendToPlayer(song) {
-        this.$scope.$emit('song:clicked', {
-            song: song
-        });
+        this.$scope.$emit('song:clicked', song);
     }
 }
 

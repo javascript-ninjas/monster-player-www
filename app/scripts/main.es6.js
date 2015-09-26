@@ -1,9 +1,8 @@
-require('../vendor/jquery/jquery');
+window.jQuery = window.$ = require('../vendor/jquery/jquery');
 require('../vendor/bootstrap/bootstrap');
 require('../vendor/angular/angular');
-
-// Global jQuery
-window.jQuery = window.$ = require('../vendor/jquery/jquery.min');
+require('../vendor/angular/angular-sanitize.min');
+require('../vendor/mediaelement/mediaelement-and-player.min');
 
 // Styles
 require('../styles/main.scss');

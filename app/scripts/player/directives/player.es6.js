@@ -2,9 +2,10 @@ import template from '../templates/player.html';
 
 class Controller {
     /*ngInject*/
-    constructor($scope, dataService) {
+    constructor($scope, dataService, $sce) {
         this.$scope = $scope;
         this.dataService = dataService;
+        this.$sce = $sce;
 
         this.setupScope();
     }
@@ -14,17 +15,32 @@ class Controller {
 
         // Obiekt przechowywuj¹cy obiekt klikniêtej piosenki.
         $scope.playerSong = {};
+        $scope.makeTrust = (url) => this.makeTrust(url);
 
-        // Tytu³ playera.
-        $scope.playerTitle = 'player directive';
+        //$scope.movie = {};
+
+    }
+
+    makeTrust(url){
+        return this.$sce.trustAsResourceUrl(url);
     }
 }
 
-let playerDirective = /*@ngInject*/ () => {
+let playerDirective = /*@ngInject*/ ($sce) => {
 
-    let parseSongObject = ($scope, data) => {
-        $scope.playerSong = data;
-        console.log('playerSong: ', $scope.playerSong);
+    let parseSongObject = ($scope, $sce, data) => {
+        $scope.movie = {
+            playerSong: data.url
+        };
+
+        $('#player1').mediaelementplayer({
+            success: function(media, node, player) {
+                $('#' + node.id + '-mode').html('mode: ' + media.pluginType);
+                console.log('success: ', media, node, player);
+            }
+        });
+
+        //console.log('playerSong: ', $scope.movie.playerSong);
     };
 
     return {
@@ -35,7 +51,7 @@ let playerDirective = /*@ngInject*/ () => {
         controller: Controller,
         link: ($scope) => {
             $scope.$on('song:clicked', ($event, data) => {
-                parseSongObject($scope, data);
+                parseSongObject($scope, $sce, data);
             });
         }
     };
